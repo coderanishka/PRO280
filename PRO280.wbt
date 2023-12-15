@@ -1,0 +1,94 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.08737833542767905 0.09649326321822516 -0.9914908353844659 1.4802077394449225
+  position -0.7765142882482392 14.02022647132726 3.0548849272803706
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 2 2
+  wallHeight 0.25
+}
+DEF Ramp Solid {
+  translation 0.725789 0.02 0.655337
+  rotation 0 1 0 -0.261795307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 0.537255 0.0196078
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 5 1 0.02
+      }
+    }
+  ]
+}
+Robot {
+  translation 2.53 0.029999 1.44
+  rotation 1 0 0 1.5708
+  children [
+    Accelerometer {
+    }
+    DistanceSensor {
+    }
+    DEF right_wheel Transform {
+      translation 0 0 -0.37
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.498039
+            roughness 0.25
+            metalness 0.75
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.3
+          }
+        }
+      ]
+    }
+    DEF left_wheel Transform {
+      translation 0 0 0.38
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.498039
+            roughness 0.25
+            metalness 0.75
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.3
+          }
+        }
+      ]
+    }
+    DEF body Transform {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            roughness 0.5
+            metalness 0.25
+          }
+          geometry Capsule {
+            height 0.42
+            radius 0.25
+          }
+        }
+      ]
+    }
+  ]
+}
